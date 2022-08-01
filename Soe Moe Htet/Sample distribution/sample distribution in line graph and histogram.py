@@ -1,0 +1,100 @@
+# Population = 10000
+# Sample = 100
+# Sample size = 1 
+
+
+
+
+import numpy.random as np
+
+import seaborn as sns
+
+import matplotlib.pyplot as plt
+
+
+
+population_size = 10000
+
+population = np.random(10000)
+
+
+
+number_of_sample = 100
+
+sample_means = np.rand(number_of_sample)
+
+sample_size = 5
+
+
+
+c = np.rand(number_of_sample)
+
+
+
+for i in range(0, number_of_sample):
+
+    c = np.randint(1, population_size, sample_size)
+
+    sample_means[i] = population[c].mean()
+
+
+# ---------------------------------------------------------
+# histogram for sampling distribution
+plt.subplot(1, 2, 1)
+
+
+
+plt.xticks(fontsize = 14)
+
+
+
+plt.yticks(fontsize = 14)
+
+
+
+sns.distplot(sample_means, bins=int(180/5), hist=True, kde=False)
+
+
+
+plt.title('Histogram of Sample mean', fontsize = 20)
+
+
+
+plt.xlabel('Sample mean', fontsize = 20)
+
+
+
+plt.ylabel('Count', fontsize = 20)
+
+
+# ---------------------------------------------------------
+# line graph for sampling distribution
+
+plt.subplot(1, 5, 5)
+
+
+
+plt.xticks(fontsize =14)
+
+
+
+plt.yticks(fontsize =14)
+
+
+
+sns.distplot(sample_means, hist=False, kde=True, color = "blue")
+
+
+plt.title('Density of Sample mean', fontsize = 20)
+
+
+
+plt.xlabel('Sample mean', fontsize = 20)
+
+
+
+plt.ylabel('Count', fontsize = 20)
+
+
+#####################################################################
+# scatter plot
